@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      const GAS_URL = "https://script.google.com/macros/s/AKfycbxb2np8UJ7r5V-M6OKfOLpLq0JLvdoDVstQLpuv7RF9_qDTk3TvVTqjIhgy32RT85_0Tw/exec";
+
+      const params = new URLSearchParams(window.location.search);
+      const car = params.get("car");
+
+      if (car) {
+        window.location.replace(GAS_URL + "?car=" + encodeURIComponent(car));
+      } else {
+        document.body.innerHTML = "차량 정보가 없습니다.";
+      }
+    </script>
+  </body>
+</html>
